@@ -16,7 +16,6 @@ def palm_size(landmark, shape):
     return ((x1 - x2)**2 + (y1 - y2) **2) **.5
 
 #Создание детектора
-
 handsDetector = mp.solutions.hands.Hands()
 cap = cv2.VideoCapture(0)
 counter = 0
@@ -38,15 +37,11 @@ while(cap.isOpened()):
 
     # Отрисовка распознанного
     if results.multi_hand_landmarks is not None:
-         #cv2.drawContours(flippedRGB, [get_points(results.multi_hand_landmarks[0].landmark, flippedRGB.shape)], 0, (255, 0, 0), 2)
          (x, y), r = cv2.minEnclosingCircle(get_points(results.multi_hand_landmarks[0].landmark, flippedRGB.shape))
          ws = palm_size(results.multi_hand_landmarks[0].landmark, flippedRGB.shape)
-         #print(2 * r / ws)
          if 2 * r / ws > 1.3:
-             #cv2.circle(flippedRGB,(int(x), int(y)), int(r), (0, 0, 255), 2)
              prev_fist = False
          else:
-             #cv2.circle(flippedRGB,(int(x), int(y)), int(r), (0, 255, 0), 2)
              if not prev_fist:
                  counter += 1
                  prev_fist = True
@@ -62,9 +57,8 @@ while(cap.isOpened()):
         time.sleep(3)
         break
 
-    # Перевести в BGR и отображение
+    # Перевести в BGR и отобразить
     res_image = cv2.cvtColor(flippedRGB, cv2.COLOR_RGB2BGR)
     cv2.imshow("Hands", res_image)
-    #print(results.multi_handedness)
 
 handsDetector.close()
