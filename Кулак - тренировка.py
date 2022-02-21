@@ -59,6 +59,6 @@ while(cap.isOpened()):
 
     # Перевести в BGR и отобразить
     res_image = cv2.cvtColor(flippedRGB, cv2.COLOR_RGB2BGR)
-    cv2.imshow("Hands", res_image)
+    cv2.imshow("Кулак", res_image)
 
 handsDetector.close()
