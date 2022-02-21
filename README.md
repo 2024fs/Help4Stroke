@@ -19,6 +19,8 @@ This project is a prototype application for helping the body recover after a str
 2. Тренировка локтя
 
 
+Если Вы хотите прекратить выполнение упражнения, смените раскладку клавиатуры на латиницу и нажмите "q".
+
 Удачи и да пребудет с Вами сила. Мы в Вас верим!
 
 ![Sir Edmund Hillary, рус](https://user-images.githubusercontent.com/95712892/154905382-0179f318-2158-4753-a038-9febb9bb5644.png)
